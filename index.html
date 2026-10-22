@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim and Tom: The Website</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Fixed Top Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="site-branding">
+        <h1 class="site-title"><a href="#series-grid" onclick="navigateTo('home')">Tim and Tom: The Website</a></h1>
+        <p class="site-subtitle">Official Digital Archive & Library</p>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active" data-page="home">Book Series</a></li>
+          <li><a href="#quotes" class="nav-link" data-page="quotes">Quote Archive</a></li>
+          <li><a href="#rated" class="nav-link" data-page="rated">Highest Rated</a></li>
+          <li><a href="#timeline" class="nav-link" data-page="timeline">Timeline</a></li>
+          <li><a href="#characters" class="nav-link" data-page="characters">Characters</a></li>
+          <li><a href="#secrets" class="nav-link" data-page="secrets">Secrets</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="reading-progress"></div>
+  </div>
+
+  <main class="container main-content">
+
+    <!-- PAGE 1: HOMEPAGE / SERIES SELECTION -->
+    <section id="page-home" class="spa-page active">
+      <section class="hero-section">
+        <h2>Book Series</h2>
+        <p class="section-desc">Explore the official archives, preserved revisions, and class manuscripts of the Tim and Tom saga.</p>
+      </section>
+      <div id="series-grid" class="series-grid">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 2: SERIES DETAIL (BOOK LIST) -->
+    <section id="page-series" class="spa-page">
+      <div class="back-nav">
+        <button class="btn btn-secondary" onclick="navigateTo('home')">&larr; Back to Series Selection</button>
+      </div>
+      <section id="series-header" class="series-header-details">
+        <!-- JS Populated -->
+      </section>
+      <div id="books-grid" class="books-grid">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 3: READER ROOM -->
+    <section id="page-reader" class="spa-page">
+      <article class="reader-card">
+        <header class="reader-meta">
+          <p class="reader-series-title" id="reader-series-name">Series</p>
+          <h1 class="reader-book-title" id="reader-book-title">Book Title</h1>
+          <div class="reader-rating-box">
+            <span>Rate this book: </span>
+            <div class="star-rating" id="star-rating-control">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <span id="rating-stats-display" class="rating-stats"></span>
+          </div>
+        </header>
+
+        <hr class="divider">
+
+        <div class="reader-content" id="reader-content-body">
+          <!-- Content inserted dynamically -->
+        </div>
+
+        <hr class="divider">
+
+        <nav class="reader-bottom-nav">
+          <button id="prev-book-btn" class="btn btn-nav">&larr; Previous Book</button>
+          <button id="back-series-btn" class="btn btn-secondary">Series Overview</button>
+          <button id="next-book-btn" class="btn btn-nav">Next Book &rarr;</button>
+        </nav>
+      </article>
+    </section>
+
+    <!-- PAGE 4: QUOTE ARCHIVE -->
+    <section id="page-quotes" class="spa-page">
+      <section class="hero-section">
+        <h2>Quote Archive</h2>
+        <p class="section-desc">Preserved quotations and memorable lines from the official manuscripts.</p>
+      </section>
+      <div class="archive-controls">
+        <input type="text" id="quote-search" placeholder="Search quote text or character..." class="search-input">
+        <select id="quote-filter-series" class="select-filter">
+          <option value="all">All Series</option>
+        </select>
+      </div>
+      <div id="quotes-grid" class="quotes-grid">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 5: HIGHEST RATED -->
+    <section id="page-rated" class="spa-page">
+      <section class="hero-section">
+        <h2>Highest Rated Books</h2>
+        <p class="section-desc">Books ranked according to your local browser ratings and evaluation data.</p>
+      </section>
+      <div class="notice-banner">
+        Note: Ratings shown reflect your local reader ratings stored in your browser session.
+      </div>
+      <div id="rated-list" class="rated-list">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 6: TIMELINE -->
+    <section id="page-timeline" class="spa-page">
+      <section class="hero-section">
+        <h2>Development Timeline</h2>
+        <p class="section-desc">Key milestones documenting the real-world evolution of the Tim and Tom project.</p>
+      </section>
+      <div id="timeline-container" class="timeline-wrapper">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 7: CHARACTERS -->
+    <section id="page-characters" class="spa-page">
+      <section class="hero-section">
+        <h2>Character Directory</h2>
+        <p class="section-desc">Profiles of core figures featured across the three book series.</p>
+      </section>
+      <div id="characters-grid" class="characters-grid">
+        <!-- JS Populated -->
+      </div>
+    </section>
+
+    <!-- PAGE 8: SECRETS -->
+    <section id="page-secrets" class="spa-page">
+      <section class="hero-section">
+        <h2>Archive Secrets</h2>
+        <p class="section-desc">Optional discoveries and interactive easter eggs hidden within the site.</p>
+      </section>
+      <div class="secrets-wrapper">
+        <div id="secrets-interactive-area" class="secrets-box">
+          <h3>Interactive Console</h3>
+          <p>Click the archive seal below to unlock hidden records:</p>
+          <button id="secret-toggle-btn" class="secret-seal-btn">🔮 Reveal Secret Entry</button>
+          <div id="secret-content-display" class="secret-revealed-box hidden">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p>&copy; Tim and Tom Digital Archive. Single-page application optimized for GitHub & Cloudflare Pages.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
